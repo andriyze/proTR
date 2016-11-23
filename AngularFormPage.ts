@@ -7,7 +7,7 @@
 import {browser, element, by, ElementFinder } from 'protractor';
 import {WebdriverWebElement} from "protractor/built/element";
 
-export class AngularHomepage {
+export class AngularFormPage {
 
     setUserName(value: string) {
         this._username.clear();
@@ -28,9 +28,18 @@ export class AngularHomepage {
     aboutText = element(by.model('aboutext'));
 
     checkBoxShow = element(by.model('show'));
+    shower = element(by.id('shower'));
+
+    disableCheckBox = element(by.xpath('//*[@id="checkboxes"]/input[2]'));
+    dummyButton = element(by.id('disabledButton'));
+
+    alertButton = element(by.id('alertbutton'));
+
+
 
     get() {
         browser.get("http://127.0.0.1:8081/ng1/");
+        //browser.get("https://protractor-atico.c9users.io:8081/ng1/");
     }
 
 

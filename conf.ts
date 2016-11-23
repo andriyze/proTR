@@ -15,7 +15,11 @@ export let config: Config = {
     capabilities: {
         browserName: 'chrome'
     },
-    specs: [ 'spec.js' ],
+    //specs: [ 'spec.js' ],
+    suites: {
+        formpage: 'spec.js',
+        repeaterpage: 'spec2.js'
+    },
     seleniumAddress: 'http://localhost:4444/wd/hub',
 
     // You could set no globals to true to avoid jQuery '$' and protractor '$'
