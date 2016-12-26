@@ -1,4 +1,4 @@
-# proTR
+# Protractor tests written in Typescript using Page Object Pattern
 Tests must be run against Protractor Test Pages found here: https://github.com/angular/protractor
 
 To run tests:
@@ -10,3 +10,6 @@ To run tests:
 3. Start run 'webdriver-manager update' and then run 'webdriver-manager start'
 
 4. Inside proTR folder run 'npm test'
+
+
+*nodejs and npm must be installed on the machine
