@@ -1,17 +1,22 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "sourceMap": false,
+    "sourceMap": true,
     "declaration": false,
-    "noImplicitAny": false,
+    "removeComments": false,
+    "noImplicitAny": true,
     "outDir": "tmp",
-    "types": ["node", "jasmine"]
+    "allowJs": true,
+    "types": ["jasmine", "node"],
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
+  "include": [
+    "test/**/*.ts",
+    "lib/**/*.js"
+  ],
   "exclude": [
-    "node_modules",
-    "asyncAwait",
-    "plugins.ts"
+    "node_modules"
   ]
 }
