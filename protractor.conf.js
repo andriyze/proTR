@@ -19,8 +19,8 @@ exports.config = {
     specs: ['./tmp/**/*.spec.js'],
     suites: {
         all: [
-            './tmp/**/first.spec.js',
-            './tmp/**/second.spec.js'
+            './tmp/**/form.spec.js',
+            './tmp/**/repeater.spec.js'
         ]
     },
     jasmineNodeOpts: {
@@ -46,7 +46,7 @@ exports.config = {
                 filePrefix: 'xmlreport'
             })
         );
-        // set screen size for headless mode
+        // set screen size
         setTimeout(function() {
             browser.driver.executeScript(function() {
                 return {

@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="Angular1 Form Page" timestamp="2017-11-17T01:59:29" hostname="localhost" time="5.715" errors="0" tests="3" skipped="0" disabled="0" failures="0">
-  <testcase classname="Angular1 Form Page" name="should check input fields" time="1.818" />
-  <testcase classname="Angular1 Form Page" name="should check checkboxes" time="1.257" />
-  <testcase classname="Angular1 Form Page" name="should check alert" time="2.638" />
+ <testsuite name="Angular1 Form Page" timestamp="2017-12-06T19:58:23" hostname="localhost" time="5.485" errors="0" tests="3" skipped="0" disabled="0" failures="0">
+  <testcase classname="Angular1 Form Page" name="should check input fields" time="1.79" />
+  <testcase classname="Angular1 Form Page" name="should check checkboxes" time="1.067" />
+  <testcase classname="Angular1 Form Page" name="should check alert message" time="2.626" />
  </testsuite>
- <testsuite name="Angular1 Repeater Page" timestamp="2017-11-17T01:59:35" hostname="localhost" time="0.44" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Angular1 Repeater Page" name="should check input fields" time="0.439" />
+ <testsuite name="Angular1 Form Page" timestamp="2017-12-06T19:58:29" hostname="localhost" time="2.955" errors="0" tests="3" skipped="0" disabled="0" failures="0">
+  <testcase classname="Angular1 Form Page" name="should check input fields" time="1.233" />
+  <testcase classname="Angular1 Form Page" name="should check checkboxes" time="1.157" />
+  <testcase classname="Angular1 Form Page" name="should check alert message" time="0.564" />
+ </testsuite>
+ <testsuite name="Angular1 Repeater Page" timestamp="2017-12-06T19:58:32" hostname="localhost" time="0.308" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Angular1 Repeater Page" name="should have 5 days" time="0.307" />
+ </testsuite>
+ <testsuite name="Angular1 Repeater Page" timestamp="2017-12-06T19:58:32" hostname="localhost" time="0.283" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Angular1 Repeater Page" name="should have 5 days" time="0.283" />
  </testsuite>
 </testsuites>

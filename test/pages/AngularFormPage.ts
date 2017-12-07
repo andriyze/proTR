@@ -1,6 +1,9 @@
 import { $, browser, by, element, ElementFinder } from 'protractor';
+import { conf } from './../conf/env';
 
 export class AngularFormPage {
+    public url = `${conf.baseUrl}/ng1/#/form`;
+
     public username = element(by.model('username'));
     public bindingUsername = element(by.binding('username'));
 
@@ -23,10 +26,5 @@ export class AngularFormPage {
     public setNickName(value: string) {
         this.nickname.clear();
         this.nickname.sendKeys(value);
-    }
-
-    public get() {
-        browser.get('http://127.0.0.1:8081/ng1/');
-        // browser.get("https://protractor-atico.c9users.io:8081/ng1/");
     }
 }

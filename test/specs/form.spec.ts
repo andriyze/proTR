@@ -4,8 +4,9 @@ import {AngularFormPage } from './../pages/AngularFormPage';
 
 describe('Angular1 Form Page', () => {
     const angularFormPage = new AngularFormPage();
+
     beforeEach(() => {
-        angularFormPage.get();
+        browser.get(angularFormPage.url);
     });
 
     it('should check input fields', () => {
@@ -45,13 +46,12 @@ describe('Angular1 Form Page', () => {
         });
     });
 
-    it('should check alert', () => {
-        angularFormPage.alertButton.click();
-        browser.driver.sleep(1000);
-
-        const alert = browser.switchTo().alert();
-        expect(alert.getText()).toMatch('Hello');
-        alert.accept();
-        browser.driver.sleep(1000);
+    it('should check alert message', () => {
+        angularFormPage.alertButton.click().then(() => {
+            browser.wait(browser.ExpectedConditions.alertIsPresent(), 2000);
+            const alert = browser.switchTo().alert();
+            expect(alert.getText()).toMatch('Hello');
+            alert.accept();
+        });
     });
 });

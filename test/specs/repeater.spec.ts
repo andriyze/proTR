@@ -5,10 +5,10 @@ describe('Angular1 Repeater Page', () => {
     const repeaterPage = new RepeaterPage();
 
     beforeEach(() => {
-        repeaterPage.get();
+        browser.get(repeaterPage.url);
     });
 
-    it('should check input fields', () => {
-        expect(browser.getTitle()).toEqual('My AngularJS App');
+    it('should have 5 days', () => {
+        expect(repeaterPage.days.count()).toEqual(5);
     });
 });
