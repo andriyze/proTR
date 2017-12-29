@@ -15,5 +15,7 @@ Tests must be run against Protractor Test Pages found here: https://github.com/a
 
 To run specific config use 'node node_modules/protractor/bin/protractor {config file}'
 
+**Includes utilities to work with files (download, upload, deletion, reading, sorting)**
 
+**Suppose to work on Linux/MacOS and Windows**
 
