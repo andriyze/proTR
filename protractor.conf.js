@@ -1,5 +1,9 @@
 var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 var JasmineReporters = require('jasmine-reporters');
+var q = require('q');
+var path = require('path');
+var sh = require('shelljs');
+var cwd = sh.pwd().toString();
 
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
@@ -10,7 +14,7 @@ exports.config = {
             prefs: {
                 download: {
                     prompt_for_download: false,
-                    default_directory: './downloads',
+                    default_directory: (path.join(cwd, 'downloads')).toString(),
                 }
             }
         }

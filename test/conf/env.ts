@@ -13,7 +13,7 @@ switch (env) {
         conf = cloud;
         break;
     case 'localhost':
-    default:
+    default:  // will run on localhost by default
         conf = localhost;
         break;
 }
