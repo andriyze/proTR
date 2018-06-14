@@ -17,5 +17,5 @@ To run specific config use 'node node_modules/protractor/bin/protractor {config 
 
 **Includes utilities to work with files (download, upload, deletion, reading, sorting)**
 
-**Suppose to work on Linux/MacOS and Windows**
+**Works on Linux,MacOS and Windows**
 
