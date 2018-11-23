@@ -4,7 +4,7 @@ import { conf } from './../conf/env';
 export class AngularFormPage {
     public url = `${conf.baseUrl}/ng1/#/form`;
 
-    public username = element(by.model('username'));
+    public username = $('[ng-model="username"]');
     public bindingUsername = element(by.binding('username'));
 
     public nickname = element(by.model('nickname'));

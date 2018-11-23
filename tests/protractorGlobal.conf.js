@@ -4,9 +4,9 @@ var q = require('q');
 var path = require('path');
 var sh = require('shelljs');
 var cwd = sh.pwd().toString();
+var globalAny = global;
 
-exports.config = {
-    seleniumAddress: 'http://localhost:4444/wd/hub',
+module.exports = {
     framework: 'jasmine2',
     capabilities: {
         browserName: 'chrome',
@@ -37,6 +37,7 @@ exports.config = {
         });
         jasmine.getEnv().addReporter(
             new Jasmine2HtmlReporter({
+                savePath:'reports',
                 takeScreenshots: true,
                 takeScreenshotsOnlyOnFailures: true,
                 showPassed: false

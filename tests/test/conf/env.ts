@@ -1,17 +1,19 @@
-import { config as cloud } from './cloud';
 import { config as localhost } from './localhost';
+import { config as dockercompose } from './dockercompose';
 
 export interface IEnvConfig {
     baseUrl: string;
 }
 
-const env = process.env.ENV; // run "export ENV=cloud" to set variable and be able to run on cloud environment
+const env = process.env.ENV; // run "export ENV=dockercompose" to set variable and be able to run inside docker-compose
+
 let conf: IEnvConfig;
 
 switch (env) {
-    case 'cloud':
-        conf = cloud;
+    case 'dockercompose':
+        conf = dockercompose;
         break;
+
     case 'localhost':
     default:  // will run on localhost by default
         conf = localhost;

@@ -1,0 +1,26 @@
+version: '3'
+services:
+
+  selenium:
+    container_name: selenium-standalone
+    image: selenium/standalone-chrome
+    ports:
+      - "4444"
+
+  app:
+    container_name: demo-app
+    build: app/.
+    ports:
+      - "8081"
+
+  prt:
+    container_name: protractor-tests
+    command: tail -F anything
+    environment:
+      - ENV=${ENV}
+    build: tests/.
+    depends_on:
+      - selenium
+      - app
+    volumes:
+      - ./reports:/tst/reports
