@@ -1,3 +1,6 @@
-Please download https://github.com/angular/protractor.git inside this folder.
-You can do that by running sciprt like this.
-'chmod +x download-demo-app.sh' and './download-demo-app'
+# This folder must contain demo app from protractor official repo
+
+Please  download protractor repo by running ```git clone https://github.com/angular/protractor.git``` inside this folder.
+
+
+Or simply run the included script ```./download-demo-app.sh```
