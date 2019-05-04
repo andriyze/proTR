@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
+    "module": "commonjs",
     "sourceMap": true,
     "declaration": false,
     "removeComments": false,
     "noImplicitAny": true,
     "outDir": "tmp",
     "allowJs": true,
-    "types": ["jasmine", "node"],
+    "types": ["jasmine", "jasminewd2", "node"],
     "typeRoots": [
       "./node_modules/@types"
     ]

@@ -20,20 +20,18 @@
     "watch": "node_modules/typescript/bin/tsc --watch"
   },
   "devDependencies": {
-    "@types/jasmine": "2.5.45",
-    "@types/node": "^11.9.6",
-    "babel-eslint": "^10.0.1",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-register": "^6.18.0",
+    "@types/jasmine": "^3.3.12",
+    "@types/jasminewd2": "^2.0.6",
+    "@types/node": "^10.14.4",
     "firefox-profile": "^1.2.0",
-    "geckodriver": "^1.7.1",
-    "jasmine-reporters": "^2.3.0",
+    "geckodriver": "^1.16.2",
+    "jasmine-reporters": "^2.3.2",
     "protractor": "^5.4.2",
     "protractor-build-verification-testreport": "0.0.9",
     "protractor-jasmine2-html-reporter": "0.0.7",
     "shelljs": "^0.8.3",
-    "tslint": "^5.13.0",
-    "typescript": "^3.3.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5",
     "typescript-eslint-parser": "^22.0.0"
   }
 }
