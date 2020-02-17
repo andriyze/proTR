@@ -1,26 +1,32 @@
 pipeline {
+
     agent any
     stages {
-        stage('Download app') {
+
+        stage('Build and Run') {
+
             steps {
-                echo 'download app'
-                sh 'rm -rf app/protractor'
-                sh 'cd app && ./download-demo-app.sh'
+                echo 'test'
+                echo 'start docker compose'
+                sh 'export ENV=dockercompose'
+                
+                sh 'docker-compose -p project1 up -d --build'
+                sh 'docker-compose -p project1 exec prt npm run protractor-docker'
+
             }
         }
-        stage('Run app') {
+
+
+        stage('Stop') {
+
             steps {
-                echo 'run'
-                nodejs(nodeJSInstallationName: 'Node 6.x') {
-                    sh 'cd app/protractor && npm i && npm start &'
-                } 
+                echo 'test'
+                echo 'Stop docker compose'
+
+                sh 'docker-compose -p project1 down'
+
             }
+
         }
-        stage('Run tests') {
-            steps {
-                echo 'e2e'
-                sh 'cd tests && npm i && npm start'
-            }
-        }
+
     }
-}
