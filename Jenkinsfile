@@ -4,14 +4,14 @@ pipeline {
         stage('Download app') {
             steps {
                 echo 'download app'
-                sh 'rm -rf protractor'
+                sh 'rm -rf app/protractor'
                 sh 'cd app && ./download-demo-app.sh'
             }
         }
         stage('Run app') {
             steps {
                 echo 'run'
-                sh 'cd protractor && npm i && npm start &'
+                sh 'cd app/protractor && npm i && npm start &'
             }
         }
         stage('Run tests') {
