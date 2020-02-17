@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo 'clone test app'
                 echo 'start docker compose'
+                sh 'whoami'
                 sh 'export ENV=dockercompose'
                 sh 'docker-compose -p project1 up -d --build'
                 echo 'start docker compose'
