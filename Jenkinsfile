@@ -9,7 +9,7 @@ pipeline {
                 docker-compose -p project1 exec prt npm run protractor-docker
             }
         }
-        stage('Stop') {
+        stage('Stop docker') {
             steps {
                 echo 'Stop docker compose'
                 docker-compose -p project1 down
