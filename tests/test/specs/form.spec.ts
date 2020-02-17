@@ -5,30 +5,30 @@ import {AngularFormPage } from './../pages/AngularFormPage';
 describe('Angular1 Form Page', () => {
     const angularFormPage = new AngularFormPage();
 
-    beforeEach(() => {
-        browser.get(angularFormPage.url);
+    beforeEach(async () => {
+        await browser.get(angularFormPage.url);
     });
 
-    it('should check input fields', () => {
-        angularFormPage.setUserName('asd');
-        angularFormPage.setNickName('newnick');
+    it('should check input fields', async () => {
+        await angularFormPage.setUserName('asd');
+        await angularFormPage.setNickName('newnick');
 
-        expect(angularFormPage.bindingUsername.getText()).toEqual('asd');
-        expect(angularFormPage.nicknameBind.getText()).toEqual('(' + 'newnick'.toUpperCase() + ')');
+        expect(await  angularFormPage.bindingUsername.getText()).toEqual('asd');
+        expect(await  angularFormPage.nicknameBind.getText()).toEqual('(' + 'newnick'.toUpperCase() + ')');
 
-        expect(browser.getTitle()).toEqual('My AngularJS App');
+        expect(await  browser.getTitle()).toEqual('My AngularJS App');
 
         const newEl: WebdriverWebElement = element(by.model('aboutbox'));
-        newEl.clear();
-        newEl.sendKeys('asdf');
+        await newEl.clear();
+        await newEl.sendKeys('asdf');
 
         const nickname = element(by.model('nickname'));
-        nickname.clear();
-        nickname.sendKeys('hohoho1');
+        await nickname.clear();
+        await nickname.sendKeys('hohoho1');
     });
 
-    it('should check checkboxes', () => {
-        expect(angularFormPage.checkBoxShow.isSelected()).toBeTruthy();
+    it('should check checkboxes', async () => {
+        expect(await  angularFormPage.checkBoxShow.isSelected()).toBeTruthy();
         // expect(angularFormPage.shower.getText).toEqual('Shown!!');
         angularFormPage.shower.getText().then((text) => {
             expect(text).toMatch('Shown!!');
@@ -38,20 +38,18 @@ describe('Angular1 Form Page', () => {
             expect(angularFormPage.shower.isDisplayed()).toBeFalsy();
         });
 
-        expect(angularFormPage.disableCheckBox.isSelected()).toBeFalsy();
-        expect(angularFormPage.dummyButton.isEnabled()).toBeTruthy();
-        angularFormPage.disableCheckBox.click().then(() => {
-            expect(angularFormPage.dummyButton.isEnabled()).toBeFalsy();
-            expect(angularFormPage.disableCheckBox.isSelected()).toBeTruthy();
-        });
+        expect(await angularFormPage.disableCheckBox.isSelected()).toBeFalsy();
+        expect(await angularFormPage.dummyButton.isEnabled()).toBeTruthy();
+        await angularFormPage.disableCheckBox.click();
+        expect(await angularFormPage.dummyButton.isEnabled()).toBeFalsy();
+        expect(await angularFormPage.disableCheckBox.isSelected()).toBeTruthy();
     });
 
-    it('should check alert message', () => {
-        angularFormPage.alertButton.click().then(() => {
-            browser.wait(browser.ExpectedConditions.alertIsPresent(), 2000);
-            const alert = browser.switchTo().alert();
-            expect(alert.getText()).toMatch('Hello');
-            alert.accept();
-        });
+    it('should check alert message', async () => {
+        await angularFormPage.alertButton.click();
+        await browser.wait(browser.ExpectedConditions.alertIsPresent(), 2000);
+        const alert = await browser.switchTo().alert();
+        expect(await alert.getText()).toMatch('Hello');
+        await alert.accept();
     });
 });

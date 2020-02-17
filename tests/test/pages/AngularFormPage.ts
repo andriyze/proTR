@@ -18,13 +18,13 @@ export class AngularFormPage {
     public dummyButton = $('#disabledButton');
     public alertButton = $('#alertbutton');
 
-    public setUserName(value: string) {
-        this.username.clear();
-        this.username.sendKeys(value);
+    public async setUserName(value: string) {
+        await this.username.clear();
+        await this.username.sendKeys(value);
     }
 
-    public setNickName(value: string) {
-        this.nickname.clear();
-        this.nickname.sendKeys(value);
+    public async setNickName(value: string) {
+        await this.nickname.clear();
+        await this.nickname.sendKeys(value);
     }
 }
