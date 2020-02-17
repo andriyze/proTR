@@ -1,14 +1,15 @@
-
 pipeline {
     agent any
     stages {
       stage('Build and Run') {
             steps {
-                echo 'test'
+                echo 'clone test app'
+                sh 'rm -rf app/protractor'
+                sh './app/download-demo-app.sh'
                 echo 'start docker compose'
                 sh 'export ENV=dockercompose'
-
                 sh 'docker-compose -p project1 up -d --build'
+                echo 'start docker compose'
                 sh 'docker-compose -p project1 exec prt npm run protractor-docker'
             }
       }
