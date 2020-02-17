@@ -11,7 +11,9 @@ pipeline {
         stage('Run app') {
             steps {
                 echo 'run'
-                sh 'cd app/protractor && npm i && npm start &'
+                nodejs(nodeJSInstallationName: 'Node 6.x') {
+                    sh 'cd app/protractor && npm i && npm start &'
+                } 
             }
         }
         stage('Run tests') {
