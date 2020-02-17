@@ -4,6 +4,7 @@ pipeline {
         stage('Download app') {
             steps {
                 echo 'download app'
+                sh 'rm -rf protractor'
                 sh 'cd app && ./download-demo-app.sh'
             }
         }
