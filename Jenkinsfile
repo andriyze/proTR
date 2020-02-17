@@ -4,8 +4,8 @@ pipeline {
       stage('Build and Run') {
             steps {
                 echo 'clone test app'
-                sh 'rm -rf ./app/protractor'
-                sh './app/download-demo-app.sh'
+                sh 'cd app && rm -rf protractor && ./download-demo-app.sh'
+                
                 echo 'start docker compose'
                 sh 'whoami'
                 sh 'export ENV=dockercompose'
