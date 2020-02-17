@@ -11,7 +11,7 @@ pipeline {
                 sh 'export ENV=dockercompose'
                 sh 'docker-compose -p project1 up -d --build'
                 echo 'start docker compose'
-                sh 'docker-compose -p project1 exec prt npm run protractor-docker'
+                sh 'docker-compose -p project1 exec -T prt npm run protractor-docker'
             }
       }
       stage('Stop') {
