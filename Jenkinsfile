@@ -1,18 +1,18 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Build and Run') {
             steps {
-                echo 'test'
-                sh 't2'
-                echo 't3'
+                echo 'start docker compose'
+                export ENV=dockercompose
+                docker-compose -p project1 up -d --build
+                docker-compose -p project1 exec prt npm run protractor-docker
             }
         }
-        stage('Next') {
+        stage('Stop') {
             steps {
-                echo 'test'
-                sh 't2'
-                echo 't3'
+                echo 'Stop docker compose'
+                docker-compose -p project1 down
             }
         }
     }
