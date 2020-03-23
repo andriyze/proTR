@@ -1,15 +1,21 @@
 # Dockerfile
 # Base image
-FROM node:alpine
-
-# Copy test project files to the image folder
-COPY ./protractor /appdir
+FROM node:10-stretch
 
 # Make the folder as a working directory
 WORKDIR /appdir
 
+# Copy test project files to the workind directory
+COPY ./ ./
+
+# Download protractor from github
+RUN ./download-demo-app.sh
+
+# Change working directory
+WORKDIR /appdir/protractor
+
 # Install the test project libraries
-RUN npm install
+RUN npm install && npm audit fix
 
 EXPOSE 8081
 
