@@ -3,10 +3,7 @@ pipeline {
     agent any
     stages {
       stage('Build and run tests') {
-            steps {
-                echo 'clone test app'
-                sh 'cd app && rm -rf protractor && ./download-demo-app.sh'
-                
+            steps {               
                 echo 'start docker compose'
                 sh 'export ENV=dockercompose'
                 sh 'docker-compose -p project1 up -d --build'
